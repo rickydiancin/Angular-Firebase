@@ -1,0 +1,15 @@
+{
+  "name": "angularFirebase",
+  "version": "1.0.0",
+  "description": "An application for taking attendance at meetups.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rickydiancin/Angular-Firebase.git"
+  },
+  "author": "Ricky Noel Diancin Jr.",
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-util": "^2.2.20",
+    "gulp-webserver": "^0.8.1"
+  }
+}
