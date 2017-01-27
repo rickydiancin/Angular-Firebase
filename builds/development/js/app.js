@@ -20,13 +20,17 @@ myApp.config(['$routeProvider', function($routeProvider) {
       templateUrl: 'views/register.html',
       controller: 'RegistrationController'
     }).
-    when('/checkins/:uId/:mId', {
+    when('/checkins/:uId/:mId/:name', {
       templateUrl: 'views/checkins.html',
       controller: 'CheckInsController'
     }).
-    when('/meetings', {
-      templateUrl: 'views/meetings.html',
-      controller: 'MeetingsController',
+    when('/checkins/:uId/:mId/:name/checkinsList', {
+      templateUrl: 'views/checkinslist.html',
+      controller: 'CheckInsController'
+    }).
+    when('/events', {
+      templateUrl: 'views/events.html',
+      controller: 'EventsController',
       resolve: {
         currentAuth: function(Authentication) {
           return Authentication.requireAuth();

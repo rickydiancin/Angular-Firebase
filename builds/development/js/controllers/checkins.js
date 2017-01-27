@@ -4,16 +4,23 @@ myApp.controller('CheckInsController',
 
     var ref, checkinsList;
 
-    $scope.whichmeeting = $routeParams.mId;
+    $scope.whichevent = $routeParams.mId;
     $scope.whichuser = $routeParams.uId;
+    $scope.theevent = $routeParams.name;
+
+    //console.log($rootScope.howManyEvents);
 
     ref = firebase.database().ref()
       .child('users').child($scope.whichuser)
-      .child('meetings').child($scope.whichmeeting)
+      .child('events').child($scope.whichevent)
       .child('checkins');
+
 
     checkinsList = $firebaseArray(ref);
     $scope.checkins = checkinsList;
+
+      //meetingList = $firebaseArray(ref2);
+    //$scope.themeetings = meetingList;
 
     $scope.order = 'firstname';
     $scope.direction = null;
@@ -59,7 +66,7 @@ myApp.controller('CheckInsController',
         date: firebase.database.ServerValue.TIMESTAMP
       }).then(function() {
         $location.path('/checkins/' + $scope.whichuser + '/' +
-        $scope.whichmeeting + '/checkinsList')
+        $scope.whichevent+ '/' + $scope.theevent + '/checkinsList')
       }); //$add
     }//addCheckin
 
